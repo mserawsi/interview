@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page Mockup - Scallop Collection</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --cream: #FAF8F5;
+      --soft-pink: #F5E6E0;
+      --dusty-rose: #D4A5A5;
+      --sage: #B8C4B8;
+      --soft-blue: #C5D5E4;
+      --charcoal: #3D3D3D;
+      --warm-gray: #8B8680;
+      --light-gray: #E8E4DF;
+      --white: #FFFFFF;
+      --gold: #C9A962;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--light-gray);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--charcoal);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--charcoal);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--dusty-rose);
+    }
+
+    .header-icons {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .icon-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--charcoal);
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    .icon-btn:hover {
+      color: var(--dusty-rose);
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      max-width: 1400px;
+      margin: 1.5rem auto;
+      padding: 0 2rem;
+      font-size: 0.75rem;
+      color: var(--warm-gray);
+      letter-spacing: 0.05em;
+    }
+
+    .breadcrumb a {
+      color: var(--warm-gray);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--charcoal);
+    }
+
+    .breadcrumb span {
+      margin: 0 0.5rem;
+    }
+
+    /* Product Section */
+    .product-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1rem;
+    }
+
+    .thumbnail-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      background: var(--light-gray);
+    }
+
+    .thumbnail.active {
+      border-color: var(--charcoal);
+    }
+
+    .thumbnail:hover {
+      border-color: var(--dusty-rose);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .main-image {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--white);
+      aspect-ratio: 1;
+    }
+
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-badge {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: var(--soft-pink);
+      color: var(--charcoal);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .wishlist-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--white);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .wishlist-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .wishlist-btn.active svg {
+      fill: var(--dusty-rose);
+    }
+
+    /* Scallop decorative border */
+    .scallop-border {
+      position: relative;
+    }
+
+    .scallop-border::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      right: 0;
+      height: 12px;
+      background:
+        radial-gradient(circle at 50% 0, var(--white) 12px, transparent 12px);
+      background-size: 24px 12px;
+    }
+
+    /* Product Info */
+    .product-info {
+      padding-top: 1rem;
+    }
+
+    .product-brand {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--dusty-rose);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .product-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stars {
+      display: flex;
+      gap: 0.25rem;
+      color: var(--gold);
+    }
+
+    .rating-text {
+      font-size: 0.85rem;
+      color: var(--warm-gray);
+    }
+
+    .rating-text a {
+      color: var(--charcoal);
+      text-decoration: underline;
+    }
+
+    .product-price {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .current-price {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    .original-price {
+      font-size: 1.1rem;
+      color: var(--warm-gray);
+      text-decoration: line-through;
+    }
+
+    .sale-badge {
+      background: var(--dusty-rose);
+      color: var(--white);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: var(--warm-gray);
+      margin-bottom: 2rem;
+    }
+
+    /* Options */
+    .option-group {
+      margin-bottom: 2rem;
+    }
+
+    .option-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .option-value {
+      font-weight: 400;
+      text-transform: none;
+      color: var(--warm-gray);
+    }
+
+    .color-options {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .color-swatch {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .color-swatch.active {
+      border-color: var(--charcoal);
+    }
+
+    .color-swatch:hover {
+      transform: scale(1.1);
+    }
+
+    .color-swatch::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+    }
+
+    .color-swatch.pink::after { background: var(--soft-pink); }
+    .color-swatch.sage::after { background: var(--sage); }
+    .color-swatch.blue::after { background: var(--soft-blue); }
+    .color-swatch.cream::after { background: #F5F0E8; }
+
+    .size-options {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .size-btn {
+      min-width: 120px;
+      padding: 1rem 1.5rem;
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      background: var(--white);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .size-btn:hover {
+      border-color: var(--dusty-rose);
+    }
+
+    .size-btn.active {
+      border-color: var(--charcoal);
+      background: var(--cream);
+    }
+
+    .size-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.25rem;
+    }
+
+    .size-price {
+      font-size: 0.75rem;
+      color: var(--warm-gray);
+    }
+
+    /* Quantity */
+    .quantity-selector {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      overflow: hidden;
+      width: fit-content;
+    }
+
+    .qty-btn {
+      width: 48px;
+      height: 48px;
+      border: none;
+      background: var(--white);
+      cursor: pointer;
+      font-size: 1.25rem;
+      color: var(--charcoal);
+      transition: background 0.3s ease;
+    }
+
+    .qty-btn:hover {
+      background: var(--cream);
+    }
+
+    .qty-input {
+      width: 60px;
+      height: 48px;
+      border: none;
+      text-align: center;
+      font-size: 1rem;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--charcoal);
+    }
+
+    .qty-input:focus {
+      outline: none;
+    }
+
+    /* Add to Cart */
+    .add-to-cart {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cart-btn {
+      flex: 1;
+      padding: 1.25rem 2rem;
+      background: var(--charcoal);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .cart-btn:hover {
+      background: #2a2a2a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .save-btn {
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--light-gray);
+      border-radius: 8px;
+      background: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .save-btn:hover {
+      border-color: var(--dusty-rose);
+    }
+
+    /* Shipping Info */
+    .shipping-info {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .shipping-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .shipping-row:last-child {
+      border-bottom: none;
+    }
+
+    .shipping-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--sage);
+    }
+
+    .shipping-text {
+      flex: 1;
+    }
+
+    .shipping-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.25rem;
+    }
+
+    .shipping-desc {
+      font-size: 0.75rem;
+      color: var(--warm-gray);
+    }
+
+    /* Accordion */
+    .accordion {
+      border-top: 1px solid var(--light-gray);
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 1.25rem 0;
+      background: none;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--charcoal);
+    }
+
+    .accordion-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.open .accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion-item.open .accordion-content {
+      max-height: 500px;
+    }
+
+    .accordion-body {
+      padding-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--warm-gray);
+      line-height: 1.8;
+    }
+
+    .accordion-body ul {
+      margin-left: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .accordion-body li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--white);
+      border-radius: 12px;
+    }
+
+    .trust-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust-icon {
+      width: 32px;
+      height: 32px;
+      color: var(--sage);
+    }
+
+    .trust-text {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      text-align: center;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 4rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+    }
+
+    .footer-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    @media (max-width: 1024px) {
+      .product-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .thumbnail-list {
+        flex-direction: row;
+        order: 2;
+      }
+
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .product-title {
+        font-size: 1.75rem;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">BLOOM & NEST</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#">Bedding</a></li>
+            <li><a href="#">Furniture</a></li>
+            <li><a href="#">Décor</a></li>
+            <li><a href="#">Bath</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </nav>
+        <div class="header-icons">
+          <button class="icon-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="M21 21l-4.35-4.35"></path>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+          <button class="icon-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="#">Home</a>
+      <span>/</span>
+      <a href="#">Bedding</a>
+      <span>/</span>
+      <a href="#">Duvet Covers</a>
+      <span>/</span>
+      <span>Scallop Organic Duvet Cover</span>
+    </div>
+
+    <!-- Product Section -->
+    <section class="product-section">
+      <!-- Gallery -->
+      <div class="gallery">
+        <div class="thumbnail-list">
+          <div
+            v-for="(img, index) in images"
+            :key="index"
+            class="thumbnail"
+            :class="{ active: selectedImage === index }"
+            @click="selectedImage = index"
+          >
+            <div :style="{ background: img.bg, width: '100%', height: '100%' }"></div>
+          </div>
+        </div>
+        <div class="main-image scallop-border">
+          <div :style="{ background: images[selectedImage].bg, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }">
+            <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+              <path d="M60 10C32.4 10 10 32.4 10 60s22.4 50 50 50 50-22.4 50-50S87.6 10 60 10z" fill="#fff" fill-opacity="0.3"/>
+              <path d="M60 25c-5 0-9 4-9 9v16c0 5 4 9 9 9s9-4 9-9V34c0-5-4-9-9-9z" fill="#fff" fill-opacity="0.5"/>
+              <path d="M60 65c-5 0-9 4-9 9v16c0 5 4 9 9 9s9-4 9-9V74c0-5-4-9-9-9z" fill="#fff" fill-opacity="0.5"/>
+              <circle cx="60" cy="60" r="8" fill="#fff" fill-opacity="0.6"/>
+            </svg>
+          </div>
+          <span class="image-badge">Exclusive</span>
+          <button class="wishlist-btn" :class="{ active: wishlisted }" @click="wishlisted = !wishlisted">
+            <svg width="20" height="20" viewBox="0 0 24 24" :fill="wishlisted ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div class="product-info">
+        <div class="product-brand">Artist Collection</div>
+        <h1 class="product-title">Scallop Organic Cotton Duvet Cover & Shams</h1>
+
+        <div class="product-rating">
+          <div class="stars">
+            <svg v-for="i in 5" :key="i" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <span class="rating-text">4.8 (127 reviews) · <a href="#">Write a review</a></span>
+        </div>
+
+        <div class="product-price">
+          <span class="current-price">$189</span>
+          <span class="original-price">$249</span>
+          <span class="sale-badge">SAVE 24%</span>
+        </div>
+        <p class="price-note">or 4 interest-free payments of $47.25 with Klarna</p>
+
+        <!-- Color Options -->
+        <div class="option-group">
+          <div class="option-label">
+            Color <span class="option-value">{{ colors[selectedColor].name }}</span>
+          </div>
+          <div class="color-options">
+            <div
+              v-for="(color, index) in colors"
+              :key="index"
+              class="color-swatch"
+              :class="[color.class, { active: selectedColor === index }]"
+              @click="selectedColor = index"
+              :title="color.name"
+            ></div>
+          </div>
+        </div>
+
+        <!-- Size Options -->
+        <div class="option-group">
+          <div class="option-label">
+            Size <span class="option-value">{{ sizes[selectedSize].name }}</span>
+          </div>
+          <div class="size-options">
+            <button
+              v-for="(size, index) in sizes"
+              :key="index"
+              class="size-btn"
+              :class="{ active: selectedSize === index }"
+              @click="selectedSize = index"
+            >
+              <div class="size-name">{{ size.name }}</div>
+              <div class="size-price">{{ size.price }}</div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quantity -->
+        <div class="option-group">
+          <div class="option-label">Quantity</div>
+          <div class="quantity-selector">
+            <button class="qty-btn" @click="quantity = Math.max(1, quantity - 1)">−</button>
+            <input type="number" class="qty-input" v-model="quantity" min="1">
+            <button class="qty-btn" @click="quantity++">+</button>
+          </div>
+        </div>
+
+        <!-- Add to Cart -->
+        <div class="add-to-cart">
+          <button class="cart-btn">Add to Cart</button>
+          <button class="save-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Shipping Info -->
+        <div class="shipping-info">
+          <div class="shipping-row">
+            <svg class="shipping-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+            <div class="shipping-text">
+              <div class="shipping-title">Free Shipping Over $99</div>
+              <div class="shipping-desc">Estimated delivery: 5-7 business days</div>
+            </div>
+          </div>
+          <div class="shipping-row">
+            <svg class="shipping-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+            </svg>
+            <div class="shipping-text">
+              <div class="shipping-title">Easy Returns</div>
+              <div class="shipping-desc">30-day hassle-free return policy</div>
+            </div>
+          </div>
+          <div class="shipping-row">
+            <svg class="shipping-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <div class="shipping-text">
+              <div class="shipping-title">Secure Checkout</div>
+              <div class="shipping-desc">SSL encrypted payment processing</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion -->
+        <div class="accordion">
+          <div
+            v-for="(item, index) in accordionItems"
+            :key="index"
+            class="accordion-item"
+            :class="{ open: openAccordion === index }"
+          >
+            <button class="accordion-header" @click="toggleAccordion(index)">
+              {{ item.title }}
+              <svg class="accordion-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="accordion-content">
+              <div class="accordion-body" v-html="item.content"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path>
+              <path d="M9 12l2 2 4-4"></path>
+            </svg>
+            <span class="trust-text">GOTS Certified<br>Organic</span>
+          </div>
+          <div class="trust-badge">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span class="trust-text">Ethically<br>Sourced</span>
+          </div>
+          <div class="trust-badge">
+            <svg class="trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+            </svg>
+            <span class="trust-text">Satisfaction<br>Guaranteed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div>
+          <div class="footer-logo">BLOOM & NEST</div>
+          <p class="footer-tagline">Creating beautiful, sustainable spaces for every stage of life. Thoughtfully designed. Responsibly made.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="#">Bedding</a></li>
+            <li><a href="#">Furniture</a></li>
+            <li><a href="#">Décor</a></li>
+            <li><a href="#">Bath</a></li>
+            <li><a href="#">Sale</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Size Guide</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">About</h4>
+          <ul class="footer-links">
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Sustainability</a></li>
+            <li><a href="#">Artisan Partners</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      data() {
+        return {
+          selectedImage: 0,
+          selectedColor: 0,
+          selectedSize: 1,
+          quantity: 1,
+          wishlisted: false,
+          openAccordion: 0,
+          images: [
+            { bg: 'linear-gradient(135deg, #F5E6E0 0%, #E8D5CF 100%)' },
+            { bg: 'linear-gradient(135deg, #E8D5CF 0%, #D4C4BE 100%)' },
+            { bg: 'linear-gradient(135deg, #F0E6E2 0%, #E5D9D3 100%)' },
+            { bg: 'linear-gradient(135deg, #FAF5F2 0%, #F0E8E4 100%)' }
+          ],
+          colors: [
+            { name: 'Blush Pink', class: 'pink' },
+            { name: 'Sage Green', class: 'sage' },
+            { name: 'Soft Blue', class: 'blue' },
+            { name: 'Natural Cream', class: 'cream' }
+          ],
+          sizes: [
+            { name: 'Twin', price: '$149' },
+            { name: 'Full/Queen', price: '$189' },
+            { name: 'King/Cal King', price: '$219' }
+          ],
+          accordionItems: [
+            {
+              title: 'Product Details',
+              content: `<p>Crafted from 100% GOTS-certified organic cotton, this luxuriously soft duvet cover features delicate scalloped edges hand-finished by artisan partners. The natural, breathable fabric ensures comfortable sleep in any season.</p>
+              <ul>
+                <li>300 thread count sateen weave</li>
+                <li>Hidden button closure</li>
+                <li>Interior corner ties</li>
+                <li>Oeko-Tex certified dyes</li>
+              </ul>`
+            },
+            {
+              title: 'Dimensions & Care',
+              content: `<p><strong>Twin:</strong> 68" x 86"<br>
+              <strong>Full/Queen:</strong> 88" x 92"<br>
+              <strong>King/Cal King:</strong> 106" x 92"</p>
+              <p style="margin-top: 1rem;"><strong>Care:</strong> Machine wash cold on gentle cycle. Tumble dry low. Warm iron if needed. Gets softer with every wash.</p>`
+            },
+            {
+              title: 'Shipping & Returns',
+              content: `<p>Free standard shipping on orders over $99. Express shipping available at checkout.</p>
+              <p style="margin-top: 0.5rem;">We offer a 30-day return policy for unused items in original packaging. Final sale items are excluded.</p>`
+            }
+          ]
+        }
+      },
+      methods: {
+        toggleAccordion(index) {
+          this.openAccordion = this.openAccordion === index ? null : index
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
