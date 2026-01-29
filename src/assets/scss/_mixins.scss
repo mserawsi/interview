@@ -1,0 +1,155 @@
+@use 'sass:color';
+@use 'variables' as *;
+
+// Responsive breakpoints
+@mixin sm {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+// Flexbox utilities
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Typography
+@mixin heading-serif($size: 2rem) {
+  font-family: $font-serif;
+  font-size: $size;
+  font-weight: 500;
+  line-height: 1.2;
+  color: $charcoal;
+}
+
+@mixin label-uppercase {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+// Buttons
+@mixin button-base {
+  font-family: $font-sans;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all $transition-base;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background: $charcoal;
+  color: $white;
+  padding: 1.25rem 2rem;
+  border-radius: $radius-md;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  &:hover {
+    background: color.adjust($charcoal, $lightness: -10%);
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+@mixin button-outline {
+  @include button-base;
+  background: $white;
+  border: 1px solid $light-gray;
+  border-radius: $radius-md;
+
+  &:hover {
+    border-color: $dusty-rose;
+  }
+}
+
+// Icon button
+@mixin icon-button($size: 44px) {
+  @include flex-center;
+  @include button-base;
+  width: $size;
+  height: $size;
+  border-radius: $radius-full;
+  background: $white;
+  border: none;
+  box-shadow: $shadow-md;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// Scallop border effect
+@mixin scallop-border($color: $white) {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: radial-gradient(circle at 50% 0, $color 12px, transparent 12px);
+    background-size: 24px 12px;
+  }
+}
+
+// Card styles
+@mixin card {
+  background: $white;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+}
+
+// Input styles
+@mixin input-base {
+  font-family: $font-sans;
+  font-size: 1rem;
+  color: $charcoal;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
