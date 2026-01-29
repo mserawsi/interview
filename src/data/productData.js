@@ -1,6 +1,6 @@
 export const productData = {
   brand: 'Artist Collection',
-  title: 'Scallop Organic Cotton Duvet Cover & Shams',
+  title: 'YO Scallop Organic Cotton Duvet Cover & Shams',
   rating: 4.8,
   reviewCount: 127,
   currentPrice: 189,
