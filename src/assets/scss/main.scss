@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use 'nav-grid';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.example-img {
+  width: 100%;
+}
+
+a {
+  pointer-events: none;
+}
