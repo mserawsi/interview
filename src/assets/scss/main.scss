@@ -10,3 +10,11 @@
 .example-img {
   width: 100%;
 }
+
+.seo-common-header-hero {
+  position: relative;
+  .seo-common-header-hero-title {
+    position: absolute;
+    bottom: 20px;
+  }
+}
