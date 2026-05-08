@@ -2,9 +2,10 @@
 
 ## Overview
 
-Your task is to style the navigation grid at the bottom of the page to match the design shown in the hero image above it.
+Your task is to style the components at the bottom of the page to match the design shown in the image above it.
 
-**Time estimate:** 10-15 minutes
+This is your qa environment: https://mserawsi.github.io/interview/
+
 
 ## Getting Started
 
@@ -41,9 +42,9 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## Your Task
 
-Look at the **hero image** at the top of the page — this is your design reference.
+Inspect the first image at the top of the page (a hero image and a navigation menu) — notice this is a PNG, this is also your **design reference**.
 
-Now look at the **navigation grid** below it. Your job is to style this grid to match the visual style shown in the hero image.
+Now inspect the elements below it. Your job is to style these elements to match the visual style shown in the design reference.
 
 ### Where to write your styles
 
@@ -62,7 +63,7 @@ This file is already imported in `main.scss`.
 - Use **SCSS** for all styling
 - Write styles only in the `src/assets/scss/` directory
 - Match the layout, spacing, and visual style from the hero image
-- Ensure the design is **responsive** (works on mobile and desktop)
+- Ensure the design is **responsive** (works on all browser size)
 - Keep your code clean and organized
 
 ### Hints
@@ -108,5 +109,8 @@ When you're finished:
    - Set **base repository** to `mserawsi/interview` and **base** to `main`
    - Set **head repository** to your fork and **compare** to your branch
    - Click **Create pull request**
+  
+4. Check your changes
+   - https://mserawsi.github.io/interview/
 
 Good luck!
