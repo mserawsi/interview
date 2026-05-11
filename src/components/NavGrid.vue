@@ -4,7 +4,7 @@
     <div class="aboxDefault">
       <div id=""
         class="mac-component-wrapper mac-column-control responsive-devicetype-desktop responsive-devicetype-mobile par_col mac-colctrl-lt6a header-nav">
-        <div class="par_col mac-colctrl-lt6a-c0 getReadyTab">
+        <div class="par_col mac-colctrl-lt6a-c0 tabItem getReadyTab">
           <div id="imgplaceholder1517963004"
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
@@ -17,7 +17,7 @@
             <p><a href="/">Lorem ipsum</a></p>
           </div>
         </div>
-        <div class="par_col mac-colctrl-lt6a-c1 nurseryTab">
+        <div class="par_col mac-colctrl-lt6a-c1 tabItem nurseryTab">
           <div id="imgplaceholder1517963007"
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
@@ -30,7 +30,7 @@
             <p><a href="/">Lorem ipsum</a></p>
           </div>
         </div>
-        <div class="par_col mac-colctrl-lt6a-c2 KidBedroomTab">
+        <div class="par_col mac-colctrl-lt6a-c2 tabItem kidBedroomTab">
           <div id="imgplaceholder1517963010"
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
@@ -43,7 +43,7 @@
             <p><a href="/">Lorem ipsum</a></p>
           </div>
         </div>
-        <div class="par_col mac-colctrl-lt6a-c3 giftIdeasTab">
+        <div class="par_col mac-colctrl-lt6a-c3 tabItem giftIdeasTab">
           <div id="imgplaceholder-187787114"
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
@@ -56,7 +56,7 @@
             <p><a href="/">Lorem ipsum</a></p>
           </div>
         </div>
-        <div class="par_col mac-colctrl-lt6a-c4 designTab">
+        <div class="par_col mac-colctrl-lt6a-c4 tabItem designTab">
           <div id="imgplaceholder-187787111"
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
@@ -69,7 +69,7 @@
             <p><a href="/">Lorem ipsum</a></p>
           </div>
         </div>
-        <div class="par_col mac-colctrl-lt6a-c5 backToSchoolTab">
+        <div class="par_col mac-colctrl-lt6a-c5 tabItem backToSchoolTab">
           <div id="imgplaceholder-187787108"
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">

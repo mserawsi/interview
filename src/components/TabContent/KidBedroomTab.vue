@@ -1,7 +1,7 @@
 <template>
   <div
     id="mbox-279838013"
-    class="tabContent KidBedroomTab ecm-component-wrapper ecm-mbox-wrapper responsive-devicetype-desktop responsive-devicetype-mobile"
+    class="tabContent kidBedroomTab ecm-component-wrapper ecm-mbox-wrapper responsive-devicetype-desktop responsive-devicetype-mobile"
   >
     <div class="mboxDefault">
       <div
