@@ -1,14 +1,3 @@
-<script setup>
-import HeroSection from './components/HeroSection.vue'
-import NavGrid from './components/NavGrid.vue'
-import GetReadyTab from './components/TabContent/GetReadyTab.vue'
-import NurseryTab from './components/TabContent/NurseryTab.vue'
-import KidBedroomTab from './components/TabContent/KidBedroomTab.vue'
-import GiftIdeasTab from './components/TabContent/GiftIdeasTab.vue'
-import DesignTab from './components/TabContent/DesignTab.vue'
-import BackToSchoolTab from './components/TabContent/BackToSchoolTab.vue'
-</script>
-
 <template>
   <div>
     <HeroSection
@@ -26,5 +15,22 @@ import BackToSchoolTab from './components/TabContent/BackToSchoolTab.vue'
     <BackToSchoolTab />
   </div>
 </template>
+
+<script setup>
+import { onMounted } from 'vue'
+import HeroSection from './components/HeroSection.vue'
+import NavGrid from './components/NavGrid.vue'
+import GetReadyTab from './components/TabContent/GetReadyTab.vue'
+import NurseryTab from './components/TabContent/NurseryTab.vue'
+import KidBedroomTab from './components/TabContent/KidBedroomTab.vue'
+import GiftIdeasTab from './components/TabContent/GiftIdeasTab.vue'
+import DesignTab from './components/TabContent/DesignTab.vue'
+import BackToSchoolTab from './components/TabContent/BackToSchoolTab.vue'
+import { tabNav } from './assets/js/tabNav.js'
+
+onMounted(() => {
+  tabNav()
+})
+</script>
 
 <style lang="scss"></style>
