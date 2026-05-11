@@ -2,7 +2,7 @@
 
 ## Overview
 
-Your task is to update the page so the hero and navigation sections matches the provided design reference and the tab content below it becomes interactive.
+Your task is to update the page so the hero and navigation sections match the provided design reference and the tab content below it becomes interactive.
 
 Design reference:
 https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202620/0629/001/001.png
@@ -51,7 +51,7 @@ Complete the CSS and JavaScript portions of the task. You may work on them in ei
 
 ### CSS Styling
 
-Style the hero and navigation sections so it resembles the design reference.
+Style the hero and navigation sections so they resemble the design reference.
 
 Write your styles in:
 
@@ -76,6 +76,14 @@ The tab content sections below the navigation do not need to be visually styled.
 
 Add vanilla JavaScript so the navigation items work like tabs.
 
+Write your JavaScript in:
+
+```text
+src/assets/js/tabNav.js
+```
+
+This file is already imported and called from `App.vue`.
+
 When a user clicks a navigation item:
 
 - The clicked item should become the active tab
@@ -84,7 +92,8 @@ When a user clicks a navigation item:
 - All other tab content sections should be hidden
 - The page should not navigate away or reload when a tab is clicked
 
-The first tab and its matching content section should be active when the page loads.
+The first tab item and first tab content are active by default in the markup. Your JavaScript should update the active state when a different tab is clicked.
+
 
 Use the existing classes in the markup to connect each navigation item with its matching tab content section. Do not use a JavaScript framework or library for this portion of the task.
 
@@ -109,8 +118,9 @@ src/
 │   ├── _variables.scss          # SCSS variables
 │   ├── _nav-grid.scss           # Navigation styles go here
 │   └── main.scss                # Global styles
-├── App.vue
-└── main.js                      # JavaScript entry point
+├── assets/js/
+│   └── tabNav.js                # Tab interaction JavaScript goes here
+└── App.vue                     
 ```
 
 ## Submission
