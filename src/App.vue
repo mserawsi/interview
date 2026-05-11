@@ -1,12 +1,16 @@
 <script setup>
-import ExampleImg from './components/ExampleImg.vue'
 import HeroSection from './components/HeroSection.vue'
 import NavGrid from './components/NavGrid.vue'
+import GetReadyTab from './components/TabContent/GetReadyTab.vue'
+import NurseryTab from './components/TabContent/NurseryTab.vue'
+import KidBedroomTab from './components/TabContent/KidBedroomTab.vue'
+import GiftIdeasTab from './components/TabContent/GiftIdeasTab.vue'
+import DesignTab from './components/TabContent/DesignTab.vue'
+import BackToSchoolTab from './components/TabContent/BackToSchoolTab.vue'
 </script>
 
 <template>
   <div>
-    <ExampleImg />
     <HeroSection
       title="Lorem ipsum"
       subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -14,6 +18,12 @@ import NavGrid from './components/NavGrid.vue'
       image-alt="Lorem ipsum Hero"
     />
     <NavGrid />
+    <GetReadyTab />
+    <NurseryTab />
+    <KidBedroomTab />
+    <GiftIdeasTab />
+    <DesignTab />
+    <BackToSchoolTab />
   </div>
 </template>
 
