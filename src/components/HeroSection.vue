@@ -2,18 +2,18 @@
   <div id="abox1975995395" class="header-hero mac-component-wrapper mac-abox-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
     <div class="aboxDefault">
       <div id="text-616612980" class="text section header-hero-title mac-component-wrapper mac-text-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
-        <h1>Tips &amp; Articles</h1>
-        <p>Let us inspire you to bring your vision to life.</p>
+        <h1>{{ props.title }}</h1>
+        <p>{{ props.subtitle }}</p>
       </div>
       <div id="imgplaceholder1049447811" class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-not-mobile header-hero-image">
-        <img class="" src="https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202529/2559/001/002.jpg" alt="Tips &amp; Articles">
+        <img class="" :src="props.image" :alt="props.imageAlt">
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     default: 'Tips &amp; Articles'
