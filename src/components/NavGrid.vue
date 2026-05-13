@@ -9,12 +9,12 @@
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
               <img class="" src="https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/003.svg"
-                alt="Lorem ipsum">
+                alt="Get Ready For Baby">
             </a>
           </div>
           <div id="text1517963005"
             class="text section mac-component-wrapper mac-text-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
-            <p><a href="/">Lorem ipsum</a></p>
+            <p><a href="/">Get Ready For Baby</a></p>
           </div>
         </div>
         <div class="par_col mac-colctrl-lt6a-c1 tabItem nurseryTab">
@@ -22,12 +22,12 @@
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
               <img class="" src="https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/004.svg"
-                alt="Lorem ipsum">
+                alt="Nursery Ideas">
             </a>
           </div>
           <div id="text1517963008"
             class="text section mac-component-wrapper mac-text-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
-            <p><a href="/">Lorem ipsum</a></p>
+            <p><a href="/">Nursery Ideas</a></p>
           </div>
         </div>
         <div class="par_col mac-colctrl-lt6a-c2 tabItem kidBedroomTab">
@@ -35,12 +35,12 @@
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
               <img class="" src="https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/001.svg"
-                alt="Lorem ipsum">
+                alt="Kid Bedroom Ideas">
             </a>
           </div>
           <div id="text1517963011"
             class="text section mac-component-wrapper mac-text-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
-            <p><a href="/">Lorem ipsum</a></p>
+            <p><a href="/">Kid Bedroom Ideas</a></p>
           </div>
         </div>
         <div class="par_col mac-colctrl-lt6a-c3 tabItem giftIdeasTab">
@@ -48,12 +48,12 @@
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
               <img class="" src="https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/005.svg"
-                alt="Lorem ipsum">
+                alt="Gift Ideas">
             </a>
           </div>
           <div id="text-187787113"
             class="text section mac-component-wrapper mac-text-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
-            <p><a href="/">Lorem ipsum</a></p>
+            <p><a href="/">Gift Ideas</a></p>
           </div>
         </div>
         <div class="par_col mac-colctrl-lt6a-c4 tabItem designTab">
@@ -61,12 +61,12 @@
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
               <img class="" src="https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/006.svg"
-                alt="Lorem ipsum">
+                alt="Design &amp; How-To Guides">
             </a>
           </div>
           <div id="text-187787110"
             class="text section mac-component-wrapper mac-text-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
-            <p><a href="/">Lorem ipsum</a></p>
+            <p><a href="/">Design &amp; How-To Guides</a></p>
           </div>
         </div>
         <div class="par_col mac-colctrl-lt6a-c5 tabItem backToSchoolTab">
@@ -74,12 +74,12 @@
             class="section imgplaceholder mac-component-wrapper mac-image-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
             <a href="/" target="_self">
               <img class="" src="https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/002.svg"
-                alt="Lorem ipsum">
+                alt="Back To School">
             </a>
           </div>
           <div id="text-187787107"
             class="text section mac-component-wrapper mac-text-wrapper responsive-devicetype-desktop responsive-devicetype-mobile">
-            <p><a href="/">Lorem ipsum</a></p>
+            <p><a href="/">Back To School</a></p>
           </div>
         </div>
       </div>
@@ -94,37 +94,37 @@ defineProps({
     default: () => [
       {
         id: 1,
-        label: 'Lorem ipsum',
+        label: 'Get Ready For Baby',
         href: '/',
         icon: 'https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/003.svg'
       },
       {
         id: 2,
-        label: 'Lorem ipsum',
+        label: 'Nursery Ideas',
         href: '/',
         icon: 'https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/004.svg'
       },
       {
         id: 3,
-        label: 'Lorem ipsum',
+        label: 'Kid Bedroom Ideas',
         href: '/',
         icon: 'https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/001.svg'
       },
       {
         id: 4,
-        label: 'Lorem ipsum',
+        label: 'Gift Ideas',
         href: '/',
         icon: 'https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/005.svg'
       },
       {
         id: 5,
-        label: 'Lorem ipsum',
+        label: 'Design &amp; How-To Guides',
         href: '/',
         icon: 'https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/006.svg'
       },
       {
         id: 6,
-        label: 'Lorem ipsum',
+        label: 'Back To School',
         href: '/',
         icon: 'https://assets.pkimgs.com/pkimgs/ab/images/dp/ecm/202528/2153/001/002.svg'
       }
