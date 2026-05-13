@@ -1,0 +1,131 @@
+@use 'variables' as *;
+
+.header-hero{
+   position: relative;
+   width: 100%;
+   overflow: hidden;
+   .aboxDefault{
+    position: relative;
+   }
+}
+
+.header-hero-image {
+  img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    
+  }
+}
+
+.header-hero-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 32px 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 24px;
+ 
+  h1 {
+    font-size: clamp(52px, 6vw, 88px);
+    font-weight: 400;
+    line-height: 1;
+    color: $primaryHeroTextColor;
+    margin: 0;
+    white-space: nowrap;
+  }
+ 
+  p {
+    font-size: clamp(13px, 1.2vw, 16px);
+    font-weight: 400;
+    color: $primaryHeroTextColor;
+    margin: 0 0 10px 0; 
+    white-space: nowrap;
+  }
+}
+ 
+
+ 
+.header-nav-wrapper {
+  background-color: $navBgColor;
+  width: 100%;
+}
+ 
+.header-nav {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  max-width: $container-max;
+  margin: 0 auto;
+}
+ 
+// Each column tab item
+.tabItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 28px 16px 0;
+  position: relative;
+ 
+  // Icon wrapper
+  .mac-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 14px;
+ 
+    img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      display: block;
+    }
+  }
+ 
+  // Label
+  .mac-text-wrapper {
+    text-align: center;
+    padding-bottom: 16px;
+ 
+    p {
+      margin: 0;
+ 
+      a {
+        font-family: $font-family;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: $navLinkColor;
+        text-decoration: none;
+        display: block;
+        white-space: nowrap;
+      }
+    }
+  }
+ 
+  // Active state: bottom border underline
+  &.is-active {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      right: 16px;
+      height: 2px;
+      background-color: $black;
+    }
+ 
+    .mac-text-wrapper p a {
+      color: $black;
+    }
+  }
+ 
+  // Hover state
+  &:hover:not(.is-active) {
+    .mac-text-wrapper p a {
+      color: $navLinkHoverUnderline;
+    }
+  }
+}
