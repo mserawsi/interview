@@ -7,16 +7,37 @@
   box-sizing: border-box;
 }
 
+#app {
+    max-width: 1680px;
+    width: 100%;
+    margin: auto;
+}
+
 .example-img {
   width: 100%;
 }
 
 a {
   pointer-events: none;
+  text-decoration: none;
+  color: $navLinkColor;
 }
 
-#app {
-    max-width: 1680px;
-    width: 100%;
-    margin: auto;
+// Hero Section
+
+// Navigation menu
+.header-nav {
+  .tabItem {
+    cursor: pointer;
+  }
+}
+
+// Javascript Tab Content
+.tabContent {
+  display: none;
+  margin-top: 50px;
+  color: $navLinkHoverUnderline;
+  &.is-active {
+    display: block;
+  }
 }

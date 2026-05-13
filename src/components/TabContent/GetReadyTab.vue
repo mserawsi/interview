@@ -8,6 +8,7 @@
         id="text-1421975030"
         class="text section ecm-component-wrapper ecm-text-wrapper responsive-devicetype-desktop responsive-devicetype-mobile"
       >
+        <p>---- DO NOT NEED TO STYLE BELOW ---- FOR JAVASCRIPT PORTION OF TEST ONLY -----</p>
         <p>Get Ready for Baby</p>
       </div>
     </div>
