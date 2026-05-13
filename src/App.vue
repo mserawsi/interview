@@ -7,12 +7,7 @@
       image-alt="Lorem ipsum Hero"
     />
     <NavGrid />
-    <GetReadyTab />
-    <NurseryTab />
-    <KidBedroomTab />
-    <GiftIdeasTab />
-    <DesignTab />
-    <BackToSchoolTab />
+    <TabContents />
   </div>
 </template>
 
@@ -20,12 +15,7 @@
 import { onMounted } from 'vue'
 import HeroSection from './components/HeroSection.vue'
 import NavGrid from './components/NavGrid.vue'
-import GetReadyTab from './components/TabContent/GetReadyTab.vue'
-import NurseryTab from './components/TabContent/NurseryTab.vue'
-import KidBedroomTab from './components/TabContent/KidBedroomTab.vue'
-import GiftIdeasTab from './components/TabContent/GiftIdeasTab.vue'
-import DesignTab from './components/TabContent/DesignTab.vue'
-import BackToSchoolTab from './components/TabContent/BackToSchoolTab.vue'
+import TabContents from './components/TabContents.vue'
 import { tabNav } from './assets/js/tabNav.js'
 
 onMounted(() => {
